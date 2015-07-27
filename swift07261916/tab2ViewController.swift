@@ -19,17 +19,10 @@ class tab2ViewController: UIViewController {
         // ボタンのイベント設定
         button.addTarget(self, action: "didTouch:", forControlEvents: UIControlEvents.TouchUpInside)
         
-        
-
-        setNavBarToTheView()
-        
-        
-        
-        
         // ナビゲーションバーのカスタマイズ
         let myImage = UIImage(named: "minions.png")
-//        self.navigationController?.navigationBar.setBackgroundImage(myImage, forBarMetrics: .Default)
-//        self.navigationController?.navigationBar.backgroundColor = UIColor.whiteColor()
+        self.navigationController?.navigationBar.setBackgroundImage(myImage, forBarMetrics: .Default)
+        self.navigationController?.navigationBar.backgroundColor = UIColor.whiteColor()
         
         println(self.navigationController?.navigationBar.frame)
         
@@ -37,15 +30,6 @@ class tab2ViewController: UIViewController {
         let backButtonItem = UIBarButtonItem(title: "", style: .Plain, target: nil, action: nil)
         navigationItem.backBarButtonItem = backButtonItem
     }
-    
-    func setNavBarToTheView() {
-        let myImage = UIImage(named: "minions.png")
-        navBar.frame=CGRectMake(0, 100, 375, 100)  // Here you can set you Width and Height for your navBar
-        navBar.backgroundColor=(UIColor .whiteColor())
-        navBar.setBackgroundImage(myImage, forBarMetrics: .Default)
-        self.view.addSubview(navBar)
-    }
-
     
     func didTouch(button :UIButton) {
         println("ボタンがタッチされました")
