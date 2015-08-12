@@ -23,7 +23,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let tab3: UIViewController = tab3ViewController()
         
         // tab2をルートにしたナビゲーションを用意する
-        let navigationController = UINavigationController(rootViewController: tab2ViewController())
+        let navigationController = CustomNavigationController(rootViewController: tab2ViewController())
+        navigationController.setNavigationBarHidden(true, animated: false)
 
         // タブバーアイテムを用意
         tab1.tabBarItem = UITabBarItem(tabBarSystemItem: UITabBarSystemItem.Featured, tag: 1)
@@ -37,14 +38,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 tab1,
                 navigationController,
                 tab3
-            ], animated: true)
+            ],
+            animated: true
+        )
     
         self.window?.rootViewController = tabBarController
         self.window?.makeKeyAndVisible()
         
-        // 戻るボタンの<を非表示
-        UINavigationBar.appearance().backIndicatorImage = UIImage()
-        UINavigationBar.appearance().backIndicatorTransitionMaskImage = UIImage()
         return true
     }
 
