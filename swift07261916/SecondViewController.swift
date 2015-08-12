@@ -13,22 +13,8 @@ class SecondViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = UIColor.blackColor()
-
-        // 右側にカスタムの戻るボタンを作成
-        let myBackButton:UIButton = UIButton.buttonWithType(UIButtonType.Custom) as! UIButton
-        myBackButton.addTarget(self, action: "popToRoot:", forControlEvents: UIControlEvents.TouchUpInside)
-        myBackButton.backgroundColor = UIColor.greenColor()
-        myBackButton.setTitle("戻ります", forState: UIControlState.Normal)
-        myBackButton.setTitleColor(UIColor.blackColor(), forState: UIControlState.Normal)
-        myBackButton.sizeToFit()
-        let myCustomBackButtonItem:UIBarButtonItem = UIBarButtonItem(customView: myBackButton)
-        self.navigationItem.rightBarButtonItem  = myCustomBackButtonItem
     }
     
-    func popToRoot(sender:UIBarButtonItem){
-        self.navigationController?.popToRootViewControllerAnimated(true)
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
